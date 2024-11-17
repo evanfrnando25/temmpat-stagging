@@ -53,9 +53,10 @@
 
         :deep(.q-btn__content) {
             font-size: 5px;
+            line-height: 7px;
         }
         :deep(.q-btn) {
-            padding: 5px 3px !important;
+            padding: 2px 10px !important;
             font-size: 5px;
             border-radius: 10px;
         }

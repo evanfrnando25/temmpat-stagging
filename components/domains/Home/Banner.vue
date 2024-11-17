@@ -100,7 +100,10 @@
 
         &__action {
             background: $secondary;
-            justify-self: center;
+            justify-self: center !important;
+            justify-content: center !important;
+            justify-items: center !important;
+            text-align: center !important;
         }
 
         @media (max-width: 768px) {
