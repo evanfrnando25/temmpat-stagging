@@ -2,7 +2,7 @@
     <div class="header">
         <div class="header__wrapper">
             <div class="header__logo">
-                <img src="@/assets/img/logo.svg" />
+                <img src="/logo.svg" />
             </div>
             <div class="header__search">
                 <CommonInputSearch v-model="search" @focus="onFocus" @blur="onBlur" />
