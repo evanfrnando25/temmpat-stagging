@@ -12,7 +12,7 @@
             control-color="secondary"
             navigation-icon="radio_button_unchecked"
             navigation
-            height="600px"
+            :height="heightBanner"
         >
             <q-carousel-slide name="style" class="column">
                 <div class="wrapper__content">
@@ -47,12 +47,30 @@
 <script lang="ts">
     export default defineNuxtComponent({
         setup() {
+            const heightBanner = ref('600px')
+
             const slide = ref('style')
             const lorem = 'lorem'
+
+            const updateCarouselConfig = () => {
+                if (window.innerWidth < 768) {
+                    heightBanner.value = '400px'
+                } else {
+                    heightBanner.value = '600px'
+                }
+            }
+
+            onMounted(() => {
+                if (import.meta.client) {
+                    window.addEventListener('resize', updateCarouselConfig)
+                    updateCarouselConfig()
+                }
+            })
 
             return {
                 slide,
                 lorem,
+                heightBanner,
             }
         },
     })
@@ -75,7 +93,7 @@
             grid-template-columns: repeat(1, 1fr);
 
             img {
-                height: 420px;
+                height: 220px;
                 background-size: cover;
             }
         }
@@ -110,10 +128,14 @@
             padding: 5% 5% 10% 5%;
         }
     }
+    :deep(.q-carousel) {
+        border-radius: 25px;
+    }
     :deep(.q-carousel__slide) {
         padding: 0px;
         width: 100%;
         overflow: hidden;
+        background: $primary !important;
     }
     :deep(.q-carousel__navigation-inner) {
         background: $secondary;

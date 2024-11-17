@@ -27,7 +27,7 @@
             let config = {
                 itemsToShow: itemToShowConfig,
                 wrapAround: false,
-                autoplay: 0,
+                autoplay: 5000,
                 gap: 50,
             }
 

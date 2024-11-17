@@ -31,7 +31,7 @@
                 itemsToScroll: 1,
                 snapAlign: 'center',
                 dir: 'ttb',
-                autoplay: 1000,
+                autoplay: 5000,
             }
 
             const updateCarouselConfig = () => {
