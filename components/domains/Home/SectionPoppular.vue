@@ -3,17 +3,12 @@
         <div class="section-poppular__wrapper">
             <div class="section-poppular__title">
                 <h2>Poppular Artist</h2>
-                <hr />
             </div>
             <div class="section-poppular__content">
                 <MyPrefix-Carousel v-bind="config">
                     <MyPrefix-Slide v-for="slide in 10" :key="slide">
                         <CommonCardArtists />
                     </MyPrefix-Slide>
-
-                    <template #addons>
-                        <MyPrefix-Navigation />
-                    </template>
                 </MyPrefix-Carousel>
             </div>
         </div>
@@ -40,15 +35,13 @@
                 }
             }
 
-            // Menambahkan event listener pada saat mounted
             onMounted(() => {
                 if (import.meta.client) {
                     window.addEventListener('resize', updateCarouselConfig)
-                    updateCarouselConfig() // Panggil pertama kali untuk memeriksa ukuran layar
+                    updateCarouselConfig()
                 }
             })
 
-            // Membersihkan event listener saat komponen dibersihkan
             onBeforeUnmount(() => {
                 if (import.meta.client) {
                     window.removeEventListener('resize', updateCarouselConfig)
@@ -102,14 +95,9 @@
     :deep(.carousel__slide) {
         margin: 0px 20px;
 
-        &:nth-child(1) {
-            margin-left: 20px;
-        }
-
         @media (max-width: 768px) {
-            &:nth-child(1) {
-                margin: 0px 0px 0px 0px;
-            }
+            padding: 0px 5px;
+            margin: 0px 0px;
         }
     }
     :deep(.q-card) {

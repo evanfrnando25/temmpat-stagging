@@ -29,10 +29,10 @@
             </q-carousel-slide>
             <q-carousel-slide name="kiw" class="column">
                 <div class="wrapper__content">
-                    <img src="@/assets/img/billie.png" alt="" />
+                    <img src="@/assets/img/bruno.png" alt="" />
                     <div class="content-description">
                         <div class="content-description__title">
-                            <h1>Billie Elish</h1>
+                            <h1>Bruno Mars</h1>
                         </div>
                         <div class="content-description__action">
                             <q-btn color="black" label="Find Ticket" padding="10px 40px" />
@@ -75,14 +75,14 @@
             grid-template-columns: repeat(1, 1fr);
 
             img {
-                height: 300px;
+                height: 420px;
                 background-size: cover;
             }
         }
     }
     .content-description {
         align-items: center;
-        padding: 30% 10%;
+        padding: 45% 5%;
         background: $secondary !important;
 
         &__title {

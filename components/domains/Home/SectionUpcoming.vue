@@ -3,7 +3,6 @@
         <div class="section-upcoming__wrapper">
             <div class="section-upcoming__title">
                 <h2>Upcoming</h2>
-                <hr />
             </div>
             <div class="section-upcoming__content">
                 <MyPrefix-Carousel v-bind="config">
@@ -24,12 +23,15 @@
     export default defineNuxtComponent({
         setup() {
             const itemToShowConfig = ref(3)
+            const gapConfig = ref('200px')
 
             let config = {
                 itemsToShow: itemToShowConfig,
                 wrapAround: false,
-                autoplay: 0,
-                gap: 50,
+                itemsToScroll: 1,
+                snapAlign: 'center',
+                dir: 'ttb',
+                autoplay: 1000,
             }
 
             const updateCarouselConfig = () => {
@@ -101,8 +103,9 @@
     :deep(.carousel__slide) {
         margin: 0px 20px;
 
-        &:nth-child(1) {
-            margin: 0px 0px 0px 0px !important;
+        @media (max-width: 768px) {
+            padding: 0px 5px;
+            margin: 0px 0px;
         }
     }
     :deep(.q-card) {

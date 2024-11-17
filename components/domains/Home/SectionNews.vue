@@ -3,17 +3,12 @@
         <div class="section-poppular__wrapper">
             <div class="section-poppular__title">
                 <h2>News</h2>
-                <hr />
             </div>
             <div class="section-poppular__content">
                 <MyPrefix-Carousel v-bind="config">
                     <MyPrefix-Slide v-for="slide in 10" :key="slide">
                         <CommonCardNews />
                     </MyPrefix-Slide>
-
-                    <template #addons>
-                        <MyPrefix-Navigation />
-                    </template>
                 </MyPrefix-Carousel>
             </div>
         </div>
@@ -100,14 +95,9 @@
     :deep(.carousel__slide) {
         margin: 0px 20px;
 
-        &:nth-child(1) {
-            margin-left: 0px;
-        }
-
         @media (max-width: 768px) {
-            &:nth-child(1) {
-                margin: 0px 0px 0px 100px;
-            }
+            padding: 0px 5px;
+            margin: 0px 0px;
         }
     }
     :deep(.q-card) {

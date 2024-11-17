@@ -1,11 +1,13 @@
 <template>
     <div>
         <DomainsHomeBanner />
+        <DomainsHomeFilter />
         <DomainsHomeSectionLibrarySpotify />
         <DomainsHomeSectionUpcoming />
         <DomainsHomeSectionPoppular />
         <DomainsHomeSectionEvent />
         <DomainsHomeSectionNews />
+        <CommonSubscription />
     </div>
 </template>
 

@@ -3,7 +3,6 @@
         <div class="section-event__wrapper">
             <div class="section-event__title">
                 <h2>Event</h2>
-                <hr />
             </div>
             <div class="section-event__content">
                 <MyPrefix-Carousel v-bind="config">
@@ -101,8 +100,9 @@
     :deep(.carousel__slide) {
         margin: 0px 20px;
 
-        &:nth-child(1) {
-            margin: 0px 0px !important;
+        @media (max-width: 768px) {
+            padding: 0px 5px;
+            margin: 0px 0px;
         }
     }
     :deep(.q-card) {
