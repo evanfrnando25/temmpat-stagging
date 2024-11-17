@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div class="header__wrapper">
-            <div class="header__logo">
+            <div @click="linkHomePage" class="header__logo">
                 <img src="/Logo.svg" />
             </div>
             <div class="header__search">
@@ -107,6 +107,12 @@
 
             const focused = ref(false)
 
+            const router = useRouter()
+
+            const linkHomePage = () => {
+                router.push('/')
+            }
+
             const shouldShowResults = computed(() => {
                 return focused.value
             })
@@ -124,6 +130,7 @@
                 focused,
                 shouldShowResults,
                 onFocus,
+                linkHomePage,
                 onBlur,
             }
         },

@@ -22,7 +22,12 @@
                             <h1>Billie Elish</h1>
                         </div>
                         <div class="content-description__action">
-                            <q-btn color="black" label="Find Ticket" padding="10px 40px" />
+                            <q-btn
+                                @click="linkToArtist"
+                                color="black"
+                                label="Find Ticket"
+                                padding="10px 40px"
+                            />
                         </div>
                     </div>
                 </div>
@@ -35,7 +40,12 @@
                             <h1>Bruno Mars</h1>
                         </div>
                         <div class="content-description__action">
-                            <q-btn color="black" label="Find Ticket" padding="10px 40px" />
+                            <q-btn
+                                @click="linkToArtist"
+                                color="black"
+                                label="Find Ticket"
+                                padding="10px 40px"
+                            />
                         </div>
                     </div>
                 </div>
@@ -51,6 +61,12 @@
 
             const slide = ref('style')
             const lorem = 'lorem'
+
+            const router = useRouter()
+
+            const linkToArtist = () => {
+                router.push('/concerts/jhon-mayer')
+            }
 
             const updateCarouselConfig = () => {
                 if (window.innerWidth < 768) {
@@ -71,6 +87,7 @@
                 slide,
                 lorem,
                 heightBanner,
+                linkToArtist,
             }
         },
     })

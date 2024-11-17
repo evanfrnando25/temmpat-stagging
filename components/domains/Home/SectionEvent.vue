@@ -2,12 +2,16 @@
     <div class="section-spotify">
         <div class="section-event__wrapper">
             <div class="section-event__title">
-                <h2>Event</h2>
+                <h2>{{ title }}</h2>
             </div>
             <div class="section-event__content">
                 <MyPrefix-Carousel v-bind="config">
                     <MyPrefix-Slide v-for="slide in 10" :key="slide">
-                        <CommonCardConcert image="/javajazz.png" title="Java Jazz" />
+                        <CommonCardConcert
+                            @click="linkRouter"
+                            image="/javajazz.png"
+                            title="Java Jazz"
+                        />
                     </MyPrefix-Slide>
 
                     <template #addons>
@@ -21,8 +25,21 @@
 
 <script lang="ts">
     export default defineNuxtComponent({
+        props: {
+            title: {
+                type: String,
+                defualt: '',
+                required: false,
+            },
+        },
         setup() {
             const itemToShowConfig = ref(3)
+
+            const router = useRouter()
+
+            const linkRouter = () => {
+                router.push('/concerts/jhon-mayer/123')
+            }
 
             let config = {
                 itemsToShow: itemToShowConfig,
@@ -54,6 +71,7 @@
 
             return {
                 config,
+                linkRouter,
             }
         },
     })
@@ -65,7 +83,7 @@
             margin: 20px 0px;
         }
         &__title {
-            width: 10%;
+            width: 40%;
 
             @media (max-width: 768px) {
                 width: 20%;

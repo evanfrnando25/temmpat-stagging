@@ -2,12 +2,12 @@
     <div class="section-spotify">
         <div class="section-poppular__wrapper">
             <div class="section-poppular__title">
-                <h2>Poppular Artist</h2>
+                <h2>{{ title }}</h2>
             </div>
             <div class="section-poppular__content">
                 <MyPrefix-Carousel v-bind="config">
                     <MyPrefix-Slide v-for="slide in 10" :key="slide">
-                        <CommonCardArtists />
+                        <CommonCardArtists @click="linkRouter('jhon-mayer')" />
                     </MyPrefix-Slide>
                 </MyPrefix-Carousel>
             </div>
@@ -17,6 +17,13 @@
 
 <script lang="ts">
     export default defineNuxtComponent({
+        props: {
+            title: {
+                type: String,
+                default: '',
+                required: false,
+            },
+        },
         setup() {
             const itemToShowConfig = ref(3)
 
@@ -25,6 +32,14 @@
                 wrapAround: false,
                 autoplay: 4000,
                 gap: 50,
+            }
+
+            const router = useRouter()
+
+            const linkRouter = (artist: string) => {
+                router.push({
+                    path: `/concerts/${artist}`,
+                })
             }
 
             const updateCarouselConfig = () => {
@@ -50,6 +65,7 @@
 
             return {
                 config,
+                linkRouter,
             }
         },
     })
@@ -61,7 +77,7 @@
             margin: 60px 0px;
         }
         &__title {
-            width: 22%;
+            width: 50%;
 
             @media (max-width: 768px) {
                 width: 60%;

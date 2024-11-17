@@ -7,7 +7,11 @@
             <div class="section-upcoming__content">
                 <MyPrefix-Carousel v-bind="config">
                     <MyPrefix-Slide v-for="slide in 10" :key="slide">
-                        <CommonCardConcert title="Dua Lipa" image="/dualipa.png" />
+                        <CommonCardConcert
+                            @click="linkRouter"
+                            title="Dua Lipa"
+                            image="/dualipa.png"
+                        />
                     </MyPrefix-Slide>
 
                     <template #addons>
@@ -24,6 +28,11 @@
         setup() {
             const itemToShowConfig = ref(3)
             const gapConfig = ref('200px')
+            const router = useRouter()
+
+            const linkRouter = () => {
+                router.push('/concerts/jhon-mayer/123')
+            }
 
             let config = {
                 itemsToShow: itemToShowConfig,
@@ -57,6 +66,7 @@
 
             return {
                 config,
+                linkRouter,
             }
         },
     })

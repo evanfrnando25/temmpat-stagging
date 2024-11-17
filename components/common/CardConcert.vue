@@ -24,7 +24,7 @@
                             <span>13,2 K</span>
                         </div>
                         <div class="card-content__higlight__ticket">
-                            <Icon name="mdi:favorite" />
+                            <Icon name="fa-ticket" />
                             <span>10 Available Tickets</span>
                         </div>
                         <div class="card-content__higlight__action">

@@ -4,8 +4,8 @@
         <DomainsHomeFilter />
         <DomainsHomeSectionLibrarySpotify />
         <DomainsHomeSectionUpcoming />
-        <DomainsHomeSectionPoppular />
-        <DomainsHomeSectionEvent />
+        <DomainsHomeSectionPoppular title="Poppular Artists" />
+        <DomainsHomeSectionEvent title="Event" />
         <DomainsHomeSectionNews />
         <CommonSubscription />
     </div>

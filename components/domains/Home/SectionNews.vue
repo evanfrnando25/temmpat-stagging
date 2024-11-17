@@ -7,7 +7,7 @@
             <div class="section-poppular__content">
                 <MyPrefix-Carousel v-bind="config">
                     <MyPrefix-Slide v-for="slide in 10" :key="slide">
-                        <CommonCardNews />
+                        <CommonCardNews @click="linkRouter('genz')" />
                     </MyPrefix-Slide>
                 </MyPrefix-Carousel>
             </div>
@@ -16,6 +16,8 @@
 </template>
 
 <script lang="ts">
+    import { Title } from 'nuxt/dist/head/runtime/components'
+
     export default defineNuxtComponent({
         setup() {
             const itemToShowConfig = ref(3)
@@ -25,6 +27,14 @@
                 wrapAround: false,
                 autoplay: 3000,
                 gap: 50,
+            }
+
+            const router = useRouter()
+
+            const linkRouter = (title: string) => {
+                router.push({
+                    path: `/news/${title}`,
+                })
             }
 
             const updateCarouselConfig = () => {
@@ -50,6 +60,7 @@
 
             return {
                 config,
+                linkRouter,
             }
         },
     })
