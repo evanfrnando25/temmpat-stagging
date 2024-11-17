@@ -1,10 +1,26 @@
 <template>
     <div class="schedule">
-        <CommonCardSchedule />
-        <CommonCardSchedule />
-        <CommonCardSchedule />
+        <CommonCardSchedule @click="linkRouter" />
+        <CommonCardSchedule @click="linkRouter" />
+        <CommonCardSchedule @click="linkRouter" />
     </div>
 </template>
+
+<script lang="ts">
+    export default defineNuxtComponent({
+        setup() {
+            const route = useRouter()
+
+            const linkRouter = () => {
+                route.push('/concerts/jhon-mayer/dubai')
+            }
+
+            return {
+                linkRouter,
+            }
+        },
+    })
+</script>
 
 <style lang="scss" scoped>
     .schedule {

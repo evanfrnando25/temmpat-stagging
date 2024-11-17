@@ -34,6 +34,12 @@
     </div>
 </template>
 
+<script lang="ts">
+    export default defineNuxtComponent({
+        setup() {},
+    })
+</script>
+
 <style lang="scss" scoped>
     .card-schedule {
         &__wrapper {
@@ -43,6 +49,7 @@
             display: flex;
             position: relative;
             flex-direction: column;
+            cursor: pointer;
             gap: 50px;
 
             @media (max-width: 768px) {
