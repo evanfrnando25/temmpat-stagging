@@ -1,0 +1,13 @@
+{
+    // https://nuxt.com/docs/guide/concepts/typescript
+    "extends": "./.nuxt/tsconfig.json",
+    "compilerOptions": {
+        "target": "ES2020", // You can also use ES2022 or ESNext
+        "module": "ES2020", // Ensure this is set to ES2020 or newer
+        "moduleResolution": "Node",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "resolveJsonModule": true
+    }
+}
